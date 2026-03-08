@@ -1,0 +1,197 @@
+<div align="center">
+
+<img src="https://i.imgur.com/placeholder.png" alt="AdvancedChat Logo" width="120"/>
+
+# AdvancedChat
+### Premium Minecraft Chat Management Plugin
+
+[![Version](https://img.shields.io/badge/version-2.0-orange?style=for-the-badge&logo=minecraft)](#)
+[![Minecraft](https://img.shields.io/badge/minecraft-1.17--1.21-green?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/license-Premium-red?style=for-the-badge)](#)
+[![Discord](https://img.shields.io/badge/discord-Join-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/advancedchat)
+
+*The most advanced, feature-rich chat plugin for your Minecraft server.*
+
+</div>
+
+---
+
+## 📦 Features
+
+### 💬 Chat Channels
+- **Local** — Only nearby players can see your message
+- **Global** — Server-wide chat
+- **Staff** — Private channel for staff members
+- **Owner** — Exclusive channel for server owners
+- Configurable range and permissions per channel
+
+### 🔨 Moderation
+- `/mute`, `/unmute`, `/ban`, `/unban`, `/kick`, `/warn`, `/freeze`
+- Auto-mute and auto-ban based on warning thresholds
+- Player notes system
+- Full message history
+
+### 📊 Report System
+- Players report others with `/report <player> <reason>`
+- Staff view all reports in an interactive **GUI menu**
+- Click a report to open the target's staff menu directly
+- Reports saved to `reports.json` — persists through restarts
+- `/reportclear [player]` to remove reports
+
+### 🤖 Chat Bot
+- Keyword-based auto-responses — no unwanted spam
+- Supports **5 game modes**: Survival, Skyblock, Factions, Prison, RPG
+- Configurable via `bot.yml`
+
+### 🎨 Chat Colors
+- `/acolor` — Interactive color picker GUI
+- Full gradient support
+- Per-permission color unlocks
+
+### 🔒 Anti-Spam & Caps Filter
+- Automatically blocks repeated messages
+- Caps lock filter with configurable threshold
+- Slow mode support
+
+### 📩 Private Messaging
+- `/msg <player> <message>` — Send a private message
+- `/r <message>` — Quick reply
+
+### 👮 Staff Tools
+- Full-featured **Staff Menu GUI**
+- `/stafflist` — View all online staff
+- **Chat Spy** — Monitor all channels silently
+
+### 📢 MOTD
+- Custom join messages based on player rank
+
+### ⚙️ Storage
+- **JSON** — Zero-setup, works out of the box
+- **MySQL** — For larger servers, fully configurable
+
+### 🌐 Multi-Language
+- English, Turkish, Spanish — fully translated
+- Every single message is customizable via `lang/` files
+
+---
+
+## 🔗 Dependencies
+
+| Dependency | Type |
+|---|---|
+| [Vault](https://www.spigotmc.org/resources/vault.34315/) | **Required** |
+| [LuckPerms](https://luckperms.net/) | Optional |
+| [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) | Optional |
+
+---
+
+## 📋 Commands & Permissions
+
+### Chat
+| Command | Description | Permission |
+|---|---|---|
+| `/global [msg]` | Switch to / send in Global channel | `advancedchat.global` |
+| `/local [msg]` | Switch to / send in Local channel | `advancedchat.local` |
+| `/msg <player> <msg>` | Send a private message | `advancedchat.msg` |
+| `/r <msg>` | Reply to last private message | `advancedchat.msg` |
+| `/acolor` | Open chat color picker GUI | `advancedchat.color` |
+| `/mention` | Mention a player | `advancedchat.mention` |
+
+### Moderation
+| Command | Description | Permission |
+|---|---|---|
+| `/mute <player> [reason]` | Mute a player | `advancedchat.mute` |
+| `/unmute <player>` | Unmute a player | `advancedchat.mute` |
+| `/ban <player> [reason]` | Ban a player from chat | `advancedchat.ban` |
+| `/unban <player>` | Unban a player | `advancedchat.ban` |
+| `/kick <player> [reason]` | Kick a player | `advancedchat.kick` |
+| `/warn <player> [reason]` | Warn a player | `advancedchat.warn` |
+| `/freeze <player>` | Freeze a player | `advancedchat.freeze` |
+| `/clearchat` | Clear the chat | `advancedchat.clearchat` |
+
+### Staff & Reports
+| Command | Description | Permission |
+|---|---|---|
+| `/report <player> <reason>` | Report a player | `advancedchat.report` |
+| `/reportlist` | View all reports (GUI) | `advancedchat.reportlist` |
+| `/reportclear [player]` | Clear reports | `advancedchat.reportclear` |
+| `/stafflist` | View online staff | `advancedchat.stafflist` |
+
+### General
+| Command | Description | Permission |
+|---|---|---|
+| `/ac reload` | Reload the plugin | `advancedchat.reload` |
+
+---
+
+## ⚙️ Configuration
+
+After the first startup, the following files will be generated in `plugins/AdvancedChat/`:
+
+```
+plugins/AdvancedChat/
+├── config.yml       — Main configuration
+├── bot.yml          — Chat bot keywords & responses
+├── reports.json     — Saved player reports
+├── data/            — Player data (JSON mode)
+└── lang/
+    ├── en.yml
+    ├── tr.yml
+    └── es.yml
+```
+
+### MySQL Setup
+In `config.yml`, set `storage-type: mysql` and fill in your credentials:
+
+```yaml
+storage-type: mysql   # or json
+
+mysql:
+  host: localhost
+  port: 3306
+  database: advancedchat
+  username: root
+  password: yourpassword
+```
+
+### Chat Format
+Customize the chat format using placeholders:
+
+```yaml
+format:
+  local:  "&8[&7Local&8] {prefix}&f{player}&8: &7{message}"
+  global: "&8[&aGlobal&8] {prefix}&f{player}&8: &f{message}"
+```
+
+---
+
+## 🚀 Installation
+
+1. Download the latest `AdvancedChat.jar` from [Releases](../../releases)
+2. Place it in your `plugins/` folder
+3. Make sure **Vault** is installed
+4. Restart your server
+5. Configure `plugins/AdvancedChat/config.yml` as needed
+6. Run `/ac reload`
+
+---
+
+## 📸 Screenshots
+
+> *Coming soon — check the BuiltByBit page for full previews.*
+
+---
+
+## 📞 Support
+
+- 💬 **Discord:** [discord.gg/advancedchat](https://discord.gg/advancedchat)
+- 🛒 **BuiltByBit:** *(link)*
+- 🔌 **SpigotMC:** *(link)*
+
+---
+
+<div align="center">
+
+Made with ❤️ by **execute**
+
+</div>
