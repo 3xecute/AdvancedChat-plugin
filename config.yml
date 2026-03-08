@@ -1,0 +1,167 @@
+# AdvancedChat Configuration
+# Color support: MiniMessage (<red>, <gradient:#ff0000:#ffff00>) and Legacy (&c, &l)
+
+# Language: en | tr | es
+language: en
+
+# Güncelleme kontrolü — yeni sürüm çıkınca konsolda uyarı + admin girişte bildirim
+update-checker: true
+# SpigotMC kaynak ID'niz (eklentiyi yayınladıktan sonra buraya girin)
+spigot-resource-id: 0
+
+chat:
+  # Radius for local chat (in blocks)
+  local-radius: 100
+
+  slow-mode:
+    enabled: true
+    delay-seconds: 3
+
+  anti-spam:
+    enabled: true
+    # Kaç benzer mesajdan sonra engel? (2 = 3. benzer mesajda engel)
+    duplicate-threshold: 2
+    duplicate-window-seconds: 10
+
+format:
+  # Placeholders: {player}, {message}, {prefix}, {suffix}, {world}
+  global: "<dark_gray>[<gradient:#00c6ff:#0072ff>G</gradient>]</dark_gray> %luckperms_prefix%<white>{player}</white><dark_gray>:</dark_gray> <white>{message}</white>"
+  local:  "<dark_gray>[<#00e676>L</#00e676>]</dark_gray> %luckperms_prefix%<white>{player}</white><dark_gray>:</dark_gray> <white>{message}</white>"
+  staff:  "<dark_gray>[<aqua>SC</aqua>]</dark_gray> %luckperms_prefix%<white>{player}</white><dark_gray>:</dark_gray> <white>{message}</white>"
+  owner:  "<dark_gray>[<red>OC</red>]</dark_gray> %luckperms_prefix%<white>{player}</white><dark_gray>:</dark_gray> <white>{message}</white>"
+
+punishment:
+  mute-durations:
+    - label: "1 Minute"
+      duration: "1m"
+    - label: "5 Minutes"
+      duration: "5m"
+    - label: "30 Minutes"
+      duration: "30m"
+    - label: "1 Hour"
+      duration: "1h"
+    - label: "1 Day"
+      duration: "1d"
+    - label: "Permanent"
+      duration: "permanent"
+
+  ban-durations:
+    - label: "1 Hour"
+      duration: "1h"
+    - label: "1 Day"
+      duration: "1d"
+    - label: "7 Days"
+      duration: "7d"
+    - label: "30 Days"
+      duration: "30d"
+    - label: "Permanent"
+      duration: "permanent"
+
+log:
+  enabled: true
+  file: "logs/chat.log"
+  log-staff-chat: true
+  log-owner-chat: true
+mention:
+  enabled: true
+  # Ses adı: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  volume: 1.0
+  pitch: 1.2
+  # {name} = mention edilen oyuncu/everyone
+  highlight: "<yellow>@{name}</yellow>"
+  everyone-highlight: "<gold><bold>@{name}</bold></gold>"
+
+discord:
+  enabled: false
+  # Discord kanalı webhook URL'i
+  webhook-url: "WEBHOOK_URL_HERE"
+  # Placeholders: {prefix} ([G] veya [L]), {player}, {message}
+  format: "{prefix} **{player}**: {message}"
+
+# Storage type: json | mysql
+storage:
+  type: json
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "advancedchat"
+    username: "root"
+    password: ""
+    ssl: false
+# ─────────────────────────────────────────────────────────────────────────────
+# WARN AUTO-ACTIONS
+# Belirli uyarı sayısına ulaşınca otomatik aksiyon
+# action: mute | ban | kick
+# duration: 1m | 1h | 1d | permanent (kick için gerekmiyor)
+# ─────────────────────────────────────────────────────────────────────────────
+warn-actions:
+  3:
+    action: mute
+    duration: 1h
+  5:
+    action: mute
+    duration: 1d
+  7:
+    action: ban
+    duration: 7d
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PRIVATE MESSAGE
+# ─────────────────────────────────────────────────────────────────────────────
+msg:
+  enabled: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CAPS LOCK FILTER
+# min-length: kaç karakterden kısa mesajları kontrol etme
+# caps-percent: mesajın yüzde kaçı büyük harf olursa devreye girer
+# lowercase: true = küçülterek gönder, false = engelle
+# ─────────────────────────────────────────────────────────────────────────────
+caps-filter:
+  enabled: true
+  min-length: 6
+  caps-percent: 70
+  lowercase: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# REPORT
+# ─────────────────────────────────────────────────────────────────────────────
+report:
+  cooldown-seconds: 30
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MOTD — Girişte karşılama mesajı
+# {player} {online} {max} placeholder'ları kullanılabilir
+# ranks: permission'a göre farklı mesaj göster (ilk eşleşen kazanır)
+# default: hiçbir rank eşleşmezse gösterilir
+# ─────────────────────────────────────────────────────────────────────────────
+motd:
+  enabled: true
+  ranks:
+    - permission: "advancedchat.admin"
+      lines:
+        - ""
+        - "<dark_gray>────────────────────────────────</dark_gray>"
+        - " <gradient:#FF8C00:#FFD700><bold>Hoş Geldin, {player}!</bold></gradient>"
+        - " <red>⚑ Admin olarak bağlandın.</red>"
+        - " <gray>Çevrimiçi: <white>{online}/{max}</white>"
+        - "<dark_gray>────────────────────────────────</dark_gray>"
+        - ""
+    - permission: "advancedchat.staff"
+      lines:
+        - ""
+        - "<dark_gray>────────────────────────────────</dark_gray>"
+        - " <gradient:#FF8C00:#FFD700><bold>Hoş Geldin, {player}!</bold></gradient>"
+        - " <aqua>⚑ Staff olarak bağlandın.</aqua>"
+        - " <gray>Çevrimiçi: <white>{online}/{max}</white>"
+        - "<dark_gray>────────────────────────────────</dark_gray>"
+        - ""
+  default:
+    - ""
+    - "<dark_gray>────────────────────────────────</dark_gray>"
+    - " <gradient:#FF8C00:#FFD700><bold>Hoş Geldin, {player}!</bold></gradient>"
+    - " <gray>Sunucuda <white>{online}</white> oyuncu çevrimiçi."
+    - " <gray>Yardım için <yellow>/help</yellow> yazabilirsin."
+    - "<dark_gray>────────────────────────────────</dark_gray>"
+    - ""

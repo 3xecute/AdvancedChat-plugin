@@ -1,0 +1,208 @@
+name: AdvancedChat
+version: '${project.version}'
+main: dev.execute.advancedchat.AdvancedChat
+api-version: '1.20'
+author: execute
+softdepend: [Vault, PlaceholderAPI]
+description: Advanced Chat Management Plugin
+
+commands:
+  sc:
+    description: Staff Chat - argümansız geçiş, argümanlı tek seferlik
+    usage: /sc [mesaj]
+    permission: advancedchat.staff
+  oc:
+    description: Owner Chat - argümansız geçiş, argümanlı tek seferlik
+    usage: /oc [mesaj]
+    permission: advancedchat.owner
+  global:
+    aliases: [g]
+    description: Global Chat kanalına geç veya mesaj gönder
+    usage: /global [mesaj]
+    permission: advancedchat.global
+  local:
+    description: Local Chat kanalına geç veya mesaj gönder
+    usage: /local [mesaj]
+    permission: advancedchat.local
+  acmenu:
+    description: Staff menüsü açıcı (gizli komut)
+    usage: /acmenu <uuid>
+    permission: advancedchat.staff
+  ac:
+    description: AdvancedChat yönetim komutu
+    usage: /ac <reload|info>
+    permission: advancedchat.admin
+  chatspy:
+    aliases: [spy]
+    description: Tüm kanalları izle (local, staff, owner)
+    usage: /chatspy
+    permission: advancedchat.spy
+  mention:
+    aliases: [mentionoff, moff, mentiontoggle]
+    description: Mention bildirim ayarları (on/off/toggle/help)
+    usage: /mention [on|off|toggle|help]
+  acolor:
+    aliases: [chatcolor, cc]
+    description: Chat rengi seçim menüsü
+    usage: /acolor
+    permission: advancedchat.chatcolor
+  unmute:
+    description: Oyuncunun susturmasını kaldır
+    usage: /unmute <player>
+    permission: advancedchat.mute
+  unban:
+    description: Oyuncunun yasağını kaldır
+    usage: /unban <player>
+    permission: advancedchat.ban
+  clearchat:
+    aliases: [cc2, chatclear]
+    description: Sohbeti temizle
+    usage: /clearchat
+    permission: advancedchat.clearchat
+  msg:
+    aliases: [tell, pm, whisper]
+    description: Özel mesaj gönder
+    usage: /msg <player> <message>
+  stafflist:
+    description: Çevrimiçi staffları listele
+    usage: /stafflist
+  report:
+    aliases: [sikayet]
+    description: Oyuncu sikayet et
+    usage: /report <player> <reason>
+    permission: advancedchat.report
+  reportlist:
+    aliases: [rlist, reports]
+    description: Rapor listesini görüntüle
+    usage: /reportlist
+    permission: advancedchat.reportlist
+  reportclear:
+    aliases: [rclear]
+    description: Raporları temizle
+    usage: /reportclear [player]
+    permission: advancedchat.reportclear
+  r:
+    aliases: [reply]
+    description: Son özel mesajı yanıtla
+    usage: /r <message>
+
+permissions:
+  advancedchat.staff:
+    description: StaffChat erişimi + [X] menüsü görme
+    default: op
+  advancedchat.owner:
+    description: OwnerChat erişimi
+    default: op
+  advancedchat.global:
+    description: Global chat kullanımı
+    default: true
+  advancedchat.local:
+    description: Local chat kullanımı
+    default: true
+  advancedchat.mute:
+    description: Oyuncu susturabilir
+    default: op
+  advancedchat.ban:
+    description: Oyuncu yasaklayabilir
+    default: op
+  advancedchat.kick:
+    description: Oyuncu atabilir
+    default: op
+  advancedchat.viewinventory:
+    description: Envanter görüntüleyebilir
+    default: op
+  advancedchat.history:
+    description: Ceza geçmişi görüntüleyebilir
+    default: op
+  advancedchat.warn:
+    description: Oyuncu uyarabilir
+    default: op
+  advancedchat.freeze:
+    description: Oyuncu dondurabilir
+    default: op
+  advancedchat.notes:
+    description: Oyuncu notları ekleyip görebilir
+    default: op
+  advancedchat.msghistory:
+    description: Oyuncunun mesaj geçmişini görebilir
+    default: op
+  advancedchat.reload:
+    description: Eklentiyi yeniden yükleyebilir
+    default: op
+  advancedchat.admin:
+    description: Tam yönetici erişimi
+    default: op
+  advancedchat.color:
+    description: Chatte renk kodu kullanabilir
+    default: op
+  advancedchat.bypass.spam:
+    description: Anti-spam'ı atlar
+    default: op
+  advancedchat.bypass.slowmode:
+    description: SlowMode'u atlar
+    default: op
+  advancedchat.spy:
+    description: /chatspy komutuyla tüm kanalları izleyebilir
+    default: op
+  advancedchat.mention.everyone:
+    description: "@everyone mention kullanabilir"
+    default: op
+  advancedchat.bypass.mention:
+    description: Mention'dan otomatik muaf (mention almaz)
+    default: false
+  advancedchat.chatcolor:
+    description: /acolor komutuna erişim
+    default: true
+  advancedchat.color.fire:
+    description: Ateş gradient rengi
+    default: true
+  advancedchat.color.ocean:
+    description: Okyanus gradient rengi
+    default: true
+  advancedchat.color.galaxy:
+    description: Galaksi gradient rengi
+    default: true
+  advancedchat.color.forest:
+    description: Orman gradient rengi
+    default: true
+  advancedchat.color.gold:
+    description: Altın gradient rengi
+    default: true
+  advancedchat.color.pink:
+    description: Pembe gradient rengi
+    default: true
+  advancedchat.color.ice:
+    description: Buz gradient rengi
+    default: true
+  advancedchat.color.sunset:
+    description: Gün batımı gradient rengi
+    default: true
+  advancedchat.color.wine:
+    description: Şarap gradient rengi
+    default: true
+  advancedchat.clearchat:
+    description: /clearchat komutu
+    default: op
+  advancedchat.bypass.clearchat:
+    description: Chat temizlenince görmez
+    default: op
+  advancedchat.report:
+    description: /report komutu
+    default: true
+  advancedchat.reportlist:
+    description: /reportlist komutu
+    default: op
+  advancedchat.reportclear:
+    description: /reportclear komutu
+    default: op
+    description: /report komutu
+    default: true
+  advancedchat.bypass.caps:
+    description: Caps lock filtresini atla
+    default: op
+  advancedchat.msg:
+    description: /msg komutu
+    default: true
+  advancedchat.color.night:
+    description: Gece gradient rengi
+    default: true

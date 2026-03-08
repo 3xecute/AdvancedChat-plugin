@@ -1,0 +1,213 @@
+# AdvancedChat GUI Configuration
+# Color support: MiniMessage (<red>, <gradient:#ff0000:#ffff00>) and Legacy (&c, &l)
+# Slot numbering: 0-53 (54 slot inventory)
+
+staff-menu:
+  title: "<dark_gray>» <gradient:#ff6b6b:#ffd93d>Staff Menu</gradient> <dark_gray>«"
+  size: 54
+  border:
+    outer:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+    inner:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      slots: [10,11,12,13,14,15,16,25,28,33,34,37,38,39,40,41,42,43]
+  items:
+    player-head:
+      slot: 22
+      material: PLAYER_HEAD
+      name: "<gradient:#FFD700:#FF8C00><bold>{player}</bold></gradient>"
+    warn:
+      slot: 19
+      material: ORANGE_DYE
+    mute:
+      slot: 20
+      material: IRON_BARS
+    ban:
+      slot: 21
+      material: BARRIER
+    kick:
+      slot: 23
+      material: LEATHER_BOOTS
+    freeze:
+      slot: 24
+      material: PACKED_ICE
+    message-history:
+      slot: 29
+      material: PAPER
+    notes:
+      slot: 30
+      material: NAME_TAG
+    history:
+      slot: 31
+      material: BOOK
+    view-inventory:
+      slot: 32
+      material: CHEST
+
+mute-menu:
+  title: "<dark_gray>» <gradient:#ff6b6b:#ff8e53>Mute Duration</gradient> <dark_gray>«"
+  size: 54
+  border:
+    outer:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+    inner:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+  duration-start-slot: 20
+  duration-material: IRON_BARS
+  duration-name: "<yellow>{label}"
+  duration-lore:
+    - ""
+    - "<gray>Duration: <white>{duration}"
+    - ""
+    - "<yellow>▶ Select"
+  back-button:
+    slot: 49
+    material: ARROW
+    name: "<gray>← Back"
+
+ban-menu:
+  title: "<dark_gray>» <gradient:#ff0000:#8b0000>Ban Duration</gradient> <dark_gray>«"
+  size: 54
+  border:
+    outer:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+    inner:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+  duration-start-slot: 20
+  duration-material: BARRIER
+  duration-name: "<red>{label}"
+  duration-lore:
+    - ""
+    - "<gray>Duration: <white>{duration}"
+    - ""
+    - "<red>▶ Select"
+  back-button:
+    slot: 49
+    material: ARROW
+    name: "<gray>← Back"
+
+history-menu:
+  title: "<dark_gray>» <gradient:#b39ddb:#7c4dff>Punishment History</gradient> <dark_gray>«"
+  size: 54
+  border:
+    outer:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+    inner:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+  mute-material: IRON_BARS
+  ban-material: BARRIER
+  kick-material: LEATHER_BOOTS
+  item-start-slot: 10
+  item-end-slot: 43
+  prev-page:
+    slot: 48
+    material: ARROW
+    name: "<gray>← Previous Page"
+  next-page:
+    slot: 50
+    material: ARROW
+    name: "<gray>Next Page →"
+  back-button:
+    slot: 49
+    material: BARRIER
+    name: "<gray>← Back"
+  no-history:
+    slot: 31
+    material: PAPER
+    name: "<gray>No punishment history"
+    lore:
+      - "<dark_gray>No records found for this player."
+
+color-menu:
+  title: "<dark_gray>» <gradient:#ff6b6b:#ffd93d:#a8ff78>Chat Color</gradient> <dark_gray>«"
+  size: 54
+  border:
+    outer:
+      material: BLACK_STAINED_GLASS_PANE
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,49,50,51,52,53]
+    inner:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      slots: [10,11,12,13,14,15,16,19,25,28,34,37,38,39,40,41,42,43]
+  reset-button:
+    slot: 49
+    material: BARRIER
+    name: "<gray>✖ Reset Color"
+    lore:
+      - ""
+      - "<gray>Reset your chat color to default."
+      - ""
+      - "<red>▶ Click"
+  presets:
+    - slot: 20
+      material: RED_DYE
+      name: "<gradient:#ff0000:#ff6b6b>🔥 Fire</gradient>"
+      format: "<gradient:#ff0000:#ff6b6b>{msg}</gradient>"
+      permission: "advancedchat.color.fire"
+
+    - slot: 21
+      material: LIGHT_BLUE_DYE
+      name: "<gradient:#00c6ff:#0072ff>🌊 Ocean</gradient>"
+      format: "<gradient:#00c6ff:#0072ff>{msg}</gradient>"
+      permission: "advancedchat.color.ocean"
+
+    - slot: 22
+      material: PURPLE_DYE
+      name: "<gradient:#a855f7:#6366f1>🌌 Galaxy</gradient>"
+      format: "<gradient:#a855f7:#6366f1>{msg}</gradient>"
+      permission: "advancedchat.color.galaxy"
+
+    - slot: 23
+      material: LIME_DYE
+      name: "<gradient:#a8ff78:#78ffd6>🌿 Forest</gradient>"
+      format: "<gradient:#a8ff78:#78ffd6>{msg}</gradient>"
+      permission: "advancedchat.color.forest"
+
+    - slot: 24
+      material: YELLOW_DYE
+      name: "<gradient:#ffd700:#ffaa00>⭐ Gold</gradient>"
+      format: "<gradient:#ffd700:#ffaa00>{msg}</gradient>"
+      permission: "advancedchat.color.gold"
+
+    - slot: 29
+      material: PINK_DYE
+      name: "<gradient:#ff6ec7:#ff9de2>🌸 Pink</gradient>"
+      format: "<gradient:#ff6ec7:#ff9de2>{msg}</gradient>"
+      permission: "advancedchat.color.pink"
+
+    - slot: 30
+      material: CYAN_DYE
+      name: "<gradient:#00f2fe:#4facfe>❄ Ice</gradient>"
+      format: "<gradient:#00f2fe:#4facfe>{msg}</gradient>"
+      permission: "advancedchat.color.ice"
+
+    - slot: 31
+      material: ORANGE_DYE
+      name: "<gradient:#f7971e:#ffd200>🌅 Sunset</gradient>"
+      format: "<gradient:#f7971e:#ffd200>{msg}</gradient>"
+      permission: "advancedchat.color.sunset"
+
+    - slot: 32
+      material: MAGENTA_DYE
+      name: "<gradient:#ff0099:#493240>🌺 Wine</gradient>"
+      format: "<gradient:#ff0099:#493240>{msg}</gradient>"
+      permission: "advancedchat.color.wine"
+
+    - slot: 33
+      material: GRAY_DYE
+      name: "<gradient:#bdc3c7:#2c3e50>🌑 Night</gradient>"
+      format: "<gradient:#bdc3c7:#2c3e50>{msg}</gradient>"
+      permission: "advancedchat.color.night"

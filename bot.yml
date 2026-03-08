@@ -1,0 +1,596 @@
+# AdvancedChat - Chat Bot Configuration
+# bot-message: true  → bot aktif
+# bot-message: false → bot devre dışı
+
+bot-message: true
+
+# Aktif oyun modu: survival | skyblock | factions | prison | rpg | default
+gamemode: default
+
+# Botun görünen ismi
+bot-name: "Assistant"
+
+# Botun prefix'i (MiniMessage destekli)
+bot-prefix: "<dark_gray>[<gradient:#FF8C00:#FFD700>BOT</gradient>]</dark_gray>"
+
+# Aynı oyuncuya kaç saniyede bir cevap versin
+cooldown-seconds: 3
+
+# Hiçbir kural eşleşmezse bu cevap verilir (boş bırakırsan sessiz kalır)
+default-response: "<gray>Bu konuda yardımcı olamıyorum. Yardım için <yellow>/help</yellow> yazabilirsin."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# OYUN MODLARI — TR / EN / ES keyword desteği
+# keywords: mesajda geçmesi yeterli (exact-match: false)
+# exact-match: true → mesajın tamamen eşleşmesi gerekir
+# {player} → mesajı yazan oyuncunun adı
+# ─────────────────────────────────────────────────────────────────────────────
+
+modes:
+
+  # ── DEFAULT ───────────────────────────────────────────────────────────────
+  default:
+    rules:
+      merhaba:
+        keywords:
+          # TR
+          - "merhaba"
+          - "selam"
+          - "hey"
+          # EN
+          - "hi"
+          - "hello"
+          - "hey there"
+          # ES
+          - "hola"
+          - "buenas"
+          - "saludos"
+        response: "<gray>Merhaba / Hello / Hola, <yellow>{player}</yellow>! Yardım için / For help / Para ayuda: <yellow>/help</yellow>"
+        exact-match: false
+
+      discord:
+        keywords:
+          # TR
+          - "discord"
+          - "dc link"
+          - "discord linki"
+          # EN
+          - "discord link"
+          - "join discord"
+          # ES
+          - "enlace discord"
+          - "unirse discord"
+        response: "<gray>Discord: <yellow>/discord</yellow>"
+        exact-match: false
+
+      kurallar:
+        keywords:
+          # TR
+          - "kural"
+          - "kurallar"
+          - "sunucu kuralı"
+          # EN
+          - "rules"
+          - "server rules"
+          # ES
+          - "reglas"
+          - "normas"
+          - "reglas del servidor"
+        response: "<gray>Kurallar / Rules / Reglas: <yellow>/rules</yellow>"
+        exact-match: false
+
+      komutlar:
+        keywords:
+          # TR
+          - "komut"
+          - "komutlar"
+          - "yardım"
+          - "ne yapabilirim"
+          # EN
+          - "help"
+          - "commands"
+          - "what can i do"
+          # ES
+          - "ayuda"
+          - "comandos"
+          - "que puedo hacer"
+        response: "<gray>Komutlar / Commands / Comandos: <yellow>/help</yellow>"
+        exact-match: false
+
+      rank:
+        keywords:
+          # TR
+          - "rank"
+          - "rütbe"
+          - "rank nasıl"
+          # EN
+          - "rank up"
+          - "how to rank"
+          # ES
+          - "rango"
+          - "subir rango"
+          - "como rankear"
+        response: "<gray>Rank bilgisi / Rank info / Info de rango: <yellow>/rank</yellow>"
+        exact-match: false
+
+  # ── SURVIVAL ──────────────────────────────────────────────────────────────
+  survival:
+    rules:
+      spawn:
+        keywords:
+          # TR
+          - "spawn"
+          - "ana alan"
+          - "başlangıç"
+          - "spavna dön"
+          # EN
+          - "go to spawn"
+          - "return spawn"
+          - "main area"
+          # ES
+          - "ir al spawn"
+          - "volver spawn"
+          - "zona principal"
+        response: "<gray>Spawn: <yellow>/spawn</yellow>"
+        exact-match: false
+
+      ev:
+        keywords:
+          # TR
+          - "ev"
+          - "home"
+          - "ev nasıl"
+          - "ev kur"
+          # EN
+          - "set home"
+          - "go home"
+          - "how to home"
+          # ES
+          - "casa"
+          - "ir a casa"
+          - "poner casa"
+        response: "<gray>Ev kur / Set home: <yellow>/sethome</yellow> — Dön / Go: <yellow>/home</yellow>"
+        exact-match: false
+
+      tpa:
+        keywords:
+          # TR
+          - "tpa"
+          - "teleport"
+          - "ışınlan"
+          - "yanıma gel"
+          # EN
+          - "teleport to"
+          - "tp request"
+          - "come to me"
+          # ES
+          - "teleportarse"
+          - "ir donde"
+          - "ven aqui"
+        response: "<gray>TP isteği / TP request / Solicitud TP: <yellow>/tpa [oyuncu/player/jugador]</yellow>"
+        exact-match: false
+
+      ekonomi:
+        keywords:
+          # TR
+          - "para"
+          - "bakiye"
+          - "ekonomi"
+          - "para nasıl kazanılır"
+          # EN
+          - "money"
+          - "balance"
+          - "economy"
+          - "how to earn"
+          # ES
+          - "dinero"
+          - "saldo"
+          - "economia"
+          - "como ganar dinero"
+        response: "<gray>Bakiye / Balance / Saldo: <yellow>/bal</yellow> — Market: <yellow>/warp market</yellow>"
+        exact-match: false
+
+      claim:
+        keywords:
+          # TR
+          - "claim"
+          - "arazi"
+          - "alan koru"
+          - "griefing"
+          # EN
+          - "claim land"
+          - "protect area"
+          - "grief protection"
+          # ES
+          - "reclamar"
+          - "proteger terreno"
+          - "proteccion"
+        response: "<gray>Arazi koru / Claim: <yellow>/claim</yellow>"
+        exact-match: false
+
+      pvp:
+        keywords:
+          # TR
+          - "pvp"
+          - "savaş alanı"
+          - "pvp nerede"
+          # EN
+          - "pvp area"
+          - "where is pvp"
+          # ES
+          - "zona pvp"
+          - "donde es pvp"
+        response: "<gray>PvP: <yellow>/warp pvp</yellow>"
+        exact-match: false
+
+      kit:
+        keywords:
+          # TR
+          - "kit"
+          - "başlangıç kiti"
+          - "kit nasıl"
+          # EN
+          - "starter kit"
+          - "how to get kit"
+          # ES
+          - "kit inicial"
+          - "como obtener kit"
+        response: "<gray>Başlangıç kiti / Starter kit / Kit inicial: <yellow>/kit starter</yellow>"
+        exact-match: false
+
+  # ── SKYBLOCK ──────────────────────────────────────────────────────────────
+  skyblock:
+    rules:
+      ada:
+        keywords:
+          # TR
+          - "ada"
+          - "adama git"
+          - "ada nasıl"
+          # EN
+          - "island"
+          - "go to island"
+          - "my island"
+          # ES
+          - "isla"
+          - "ir a isla"
+          - "mi isla"
+        response: "<gray>Ada / Island / Isla: <yellow>/is home</yellow> — Yeni / New: <yellow>/is create</yellow>"
+        exact-match: false
+
+      cobblestone:
+        keywords:
+          # TR
+          - "cobblestone"
+          - "taş üreteci"
+          - "generator"
+          - "cobble nasıl"
+          # EN
+          - "cobble generator"
+          - "stone generator"
+          - "how to make generator"
+          # ES
+          - "generador de cobble"
+          - "como hacer generador"
+        response: "<gray>Generator için suyu ve lavı yan yana koy / Place water and lava side by side / Pon agua y lava juntos."
+        exact-match: false
+
+      seviye:
+        keywords:
+          # TR
+          - "seviye"
+          - "ada seviyesi"
+          - "nasıl yükselir"
+          # EN
+          - "island level"
+          - "how to level up"
+          - "level island"
+          # ES
+          - "nivel isla"
+          - "subir nivel"
+          - "como subir nivel"
+        response: "<gray>Ada seviyesi / Island level / Nivel isla: <yellow>/is level</yellow>"
+        exact-match: false
+
+      takim:
+        keywords:
+          # TR
+          - "takım"
+          - "adaya ekle"
+          - "arkadaş ekle"
+          # EN
+          - "team"
+          - "invite to island"
+          - "add to island"
+          # ES
+          - "equipo"
+          - "invitar isla"
+          - "agregar isla"
+        response: "<gray>Takım daveti / Team invite / Invitación: <yellow>/is team invite [oyuncu/player/jugador]</yellow>"
+        exact-match: false
+
+      market:
+        keywords:
+          # TR
+          - "market"
+          - "satış"
+          - "mağaza"
+          # EN
+          - "shop"
+          - "store"
+          - "buy sell"
+          # ES
+          - "tienda"
+          - "comprar vender"
+        response: "<gray>Market / Shop / Tienda: <yellow>/warp market</yellow>"
+        exact-match: false
+
+  # ── FACTIONS ──────────────────────────────────────────────────────────────
+  factions:
+    rules:
+      faction_kur:
+        keywords:
+          # TR
+          - "faction kur"
+          - "klan kur"
+          - "faction nasıl"
+          # EN
+          - "create faction"
+          - "how to faction"
+          - "make faction"
+          # ES
+          - "crear faccion"
+          - "como hacer faccion"
+        response: "<gray>Faction kur / Create: <yellow>/f create [isim/name/nombre]</yellow>"
+        exact-match: false
+
+      guc:
+        keywords:
+          # TR
+          - "güç"
+          - "power nasıl"
+          - "güç artar"
+          # EN
+          - "power"
+          - "how to get power"
+          - "increase power"
+          # ES
+          - "poder"
+          - "como ganar poder"
+        response: "<gray>Güç oynayarak artar, ölmekten kaçın / Power grows by playing, avoid dying / El poder crece jugando, evita morir."
+        exact-match: false
+
+      claim:
+        keywords:
+          # TR
+          - "claim"
+          - "toprak al"
+          - "arazi"
+          # EN
+          - "claim land"
+          - "territory"
+          # ES
+          - "reclamar tierra"
+          - "territorio"
+        response: "<gray>Toprak al / Claim: <yellow>/f claim</yellow> — Bırak / Unclaim: <yellow>/f unclaim</yellow>"
+        exact-match: false
+
+      ally:
+        keywords:
+          # TR
+          - "ittifak"
+          - "ally"
+          - "müttefik"
+          # EN
+          - "alliance"
+          - "make ally"
+          # ES
+          - "alianza"
+          - "hacer aliado"
+        response: "<gray>İttifak / Ally / Alianza: <yellow>/f ally [faction]</yellow>"
+        exact-match: false
+
+      base:
+        keywords:
+          # TR
+          - "base"
+          - "üs"
+          - "f home"
+          # EN
+          - "faction home"
+          - "go to base"
+          # ES
+          - "base faccion"
+          - "ir a base"
+        response: "<gray>Faction üssü / Base / Base: <yellow>/f home</yellow>"
+        exact-match: false
+
+  # ── PRISON ────────────────────────────────────────────────────────────────
+  prison:
+    rules:
+      mine:
+        keywords:
+          # TR
+          - "maden"
+          - "mine nerede"
+          - "nerede kazılır"
+          # EN
+          - "mine"
+          - "where to mine"
+          - "mining area"
+          # ES
+          - "mina"
+          - "donde minar"
+          - "zona de mineria"
+        response: "<gray>Madenler / Mines / Minas: <yellow>/warp mine</yellow>"
+        exact-match: false
+
+      rankup:
+        keywords:
+          # TR
+          - "rank atla"
+          - "rankup"
+          - "nasıl yükselir"
+          # EN
+          - "rank up"
+          - "how to rankup"
+          - "next rank"
+          # ES
+          - "subir rango"
+          - "como rankear"
+          - "siguiente rango"
+        response: "<gray>Rank atla / Rankup / Subir rango: <yellow>/rankup</yellow>"
+        exact-match: false
+
+      prestij:
+        keywords:
+          # TR
+          - "prestij"
+          - "prestige nasıl"
+          # EN
+          - "prestige"
+          - "how to prestige"
+          # ES
+          - "prestigio"
+          - "como prestigiar"
+        response: "<gray>Prestij / Prestige / Prestigio: <yellow>/prestige</yellow> — Maksimum ranka ulaşman gerekir / Max rank required."
+        exact-match: false
+
+      sell:
+        keywords:
+          # TR
+          - "sat"
+          - "satmak"
+          - "envanter sat"
+          # EN
+          - "sell"
+          - "sell all"
+          - "how to sell"
+          # ES
+          - "vender"
+          - "vender todo"
+          - "como vender"
+        response: "<gray>Hepsini sat / Sell all / Vender todo: <yellow>/sell all</yellow>"
+        exact-match: false
+
+      enchant:
+        keywords:
+          # TR
+          - "enchant"
+          - "büyü"
+          - "kazma büyüsü"
+          # EN
+          - "enchantment"
+          - "enchant pickaxe"
+          - "how to enchant"
+          # ES
+          - "encantamiento"
+          - "encantar pico"
+          - "como encantar"
+        response: "<gray>Büyü / Enchant / Encantar: <yellow>/enchant</yellow>"
+        exact-match: false
+
+  # ── RPG ───────────────────────────────────────────────────────────────────
+  rpg:
+    rules:
+      quest:
+        keywords:
+          # TR
+          - "görev"
+          - "görev al"
+          - "quest nasıl"
+          # EN
+          - "quest"
+          - "how to quest"
+          - "get quest"
+          # ES
+          - "mision"
+          - "como hacer mision"
+          - "obtener mision"
+        response: "<gray>Görevler / Quests / Misiones: <yellow>/quests</yellow>"
+        exact-match: false
+
+      skill:
+        keywords:
+          # TR
+          - "skill"
+          - "yetenek"
+          - "beceri"
+          # EN
+          - "skills"
+          - "abilities"
+          - "skill points"
+          # ES
+          - "habilidades"
+          - "destrezas"
+          - "puntos habilidad"
+        response: "<gray>Yetenekler / Skills / Habilidades: <yellow>/skills</yellow>"
+        exact-match: false
+
+      parti:
+        keywords:
+          # TR
+          - "parti"
+          - "party kur"
+          - "grup"
+          # EN
+          - "party"
+          - "create party"
+          - "join party"
+          # ES
+          - "grupo"
+          - "crear grupo"
+          - "unirse grupo"
+        response: "<gray>Parti kur / Create party / Crear grupo: <yellow>/party create</yellow> — Davet / Invite: <yellow>/party invite [oyuncu/player/jugador]</yellow>"
+        exact-match: false
+
+      boss:
+        keywords:
+          # TR
+          - "boss"
+          - "boss nerede"
+          - "boss ne zaman"
+          # EN
+          - "boss fight"
+          - "where is boss"
+          - "when is boss"
+          # ES
+          - "jefe"
+          - "donde esta el jefe"
+          - "cuando aparece boss"
+        response: "<gray>Boss zamanlaması / Boss timer / Temporizador boss: <yellow>/boss</yellow>"
+        exact-match: false
+
+      sinif:
+        keywords:
+          # TR
+          - "sınıf"
+          - "class seç"
+          - "karakter"
+          # EN
+          - "class"
+          - "choose class"
+          - "character class"
+          # ES
+          - "clase"
+          - "elegir clase"
+          - "clase personaje"
+        response: "<gray>Sınıf / Class / Clase: <yellow>/class</yellow>"
+        exact-match: false
+
+      loot:
+        keywords:
+          # TR
+          - "loot"
+          - "eşya"
+          - "nadir eşya"
+          # EN
+          - "loot"
+          - "rare item"
+          - "drop"
+          # ES
+          - "botin"
+          - "objeto raro"
+          - "recompensa"
+        response: "<gray>Nadir eşyalar boss ve zindanlardan düşer / Rare loot drops from bosses and dungeons / El botín raro cae de jefes y mazmorras. <yellow>/warp dungeon</yellow>"
+        exact-match: false

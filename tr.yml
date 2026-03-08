@@ -1,0 +1,221 @@
+# AdvancedChat - Türkçe Dil Dosyası
+
+prefix: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> "
+
+general:
+  no-permission: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Bu işlemi yapmak için yetkiniz yok."
+  player-not-found: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Oyuncu bulunamadı veya çevrimiçi değil."
+  reload-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>Eklenti başarıyla yeniden yüklendi."
+  console-only: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Bu komut yalnızca oyuncular tarafından kullanılabilir."
+
+chat:
+  muted: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Susturuldunuz! Bitiş: <yellow>{expiry}"
+  muted-reason: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Susturuldunuz! Sebep: <yellow>{reason} <red>| Bitiş: <yellow>{expiry}"
+  spam-warning: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Lütfen aynı mesajı tekrar tekrar göndermeyin!"
+  slowmode-warning: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Yavaşlayın! Mesaj göndermek için <yellow>{seconds}s</yellow> bekleyin."
+  global-disabled: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Global sohbet şu anda devre dışı."
+  local-disabled: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Yerel sohbet şu anda devre dışı."
+  nobody-hearing-local: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Yakında kimse yok, seni kimse duymuyor."
+  nobody-hearing-global: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Başka kimse çevrimiçi değil, seni kimse duymuyor."
+  nobody-hearing-staff: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Çevrimiçi başka staff üyesi yok."
+  nobody-hearing-owner: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Çevrimiçi başka owner yok."
+  channel-switched-global: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Kanal: <white>Global Sohbet"
+  channel-switched-local: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Kanal: <white>Yerel Sohbet"
+  channel-switched-staff: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Kanal: <white>Staff Chat"
+  channel-switched-owner: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Kanal: <white>Owner Chat"
+
+  cleared: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Sohbet <white>{staff}</white> tarafından temizlendi."
+  caps-lowered: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <yellow>Mesajınız küçük harfe çevrildi."
+  caps-blocked: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Lütfen aşırı büyük harf kullanmayın."
+punishment:
+  default-mute-reason: "Uygunsuz konuşma"
+  default-ban-reason: "Kurallara aykırı davranış"
+  default-kick-reason: "Sunucudan atıldınız"
+
+  mute-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>{player} susturuldu. Süre: <white>{duration}"
+  ban-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>{player} yasaklandı. Süre: <white>{duration}"
+  kick-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>{player} atıldı."
+  unmute-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>{player} susturması kaldırıldı."
+  unban-success: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>{player} yasağı kaldırıldı."
+
+  banned-screen: |-
+    <gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red><bold>Yasaklandınız!</bold>
+    <gray>Sebep: <white>{reason}
+    <gray>Bitiş: <white>{expiry}
+
+  muted-screen: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Susturuldunuz! Bitiş: <yellow>{expiry}"
+  kick-screen: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>{reason}"
+
+filter:
+  blocked: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Mesajınız uygunsuz içerik nedeniyle engellendi."
+  replaced: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <yellow>Mesajınızın bir kısmı filtrelendi."
+  warned: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <yellow>Uyarı: Lütfen dilinize dikkat edin."
+  warn-muted: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>{duration} süreyle otomatik olarak susturuldunuz."
+  auto-mute-reason: "Otomatik filtre ihlali"
+
+spy:
+  enabled: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>Chat Spy <bold>açıldı</bold>. Artık tüm kanalları görebilirsiniz."
+  disabled: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Chat Spy <bold>kapatıldı</bold>."
+
+mention:
+  notified: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <yellow>✦ <white>{player} <yellow>seni etiketledi!"
+  toggle-on: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>Mention bildirimleri açıldı."
+  toggle-off: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Mention bildirimleri kapatıldı."
+
+color:
+  selected: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green>Sohbet rengi seçildi: {color}"
+  reset: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Sohbet rengi varsayılana döndürüldü."
+
+help:
+  title: "Komutlar"
+  legend: "<> = Zorunlu  [] = Opsiyonel"
+  # Oyuncu komutları
+  cmd-global: "Global sohbete geç / mesaj gönder"
+  cmd-local: "Yerel sohbete geç / mesaj gönder"
+  cmd-mention-on: "Mention bildirimlerini aç"
+  cmd-mention-off: "Mention bildirimlerini kapat"
+  cmd-mention-toggle: "Mention bildirimlerini değiştir"
+  cmd-acolor: "Sohbet rengi seç"
+  # Yetkili bölümü
+  staff-title: "— Yetkili Komutları —"
+  cmd-sc: "Staff sohbetine geç / mesaj gönder"
+  cmd-oc: "Owner sohbetine geç / mesaj gönder"
+  cmd-chatspy: "Tüm kanalları izle"
+  # Admin bölümü
+  admin-title: "— Admin Komutları —"
+  cmd-reload: "Eklentiyi yeniden yükle"
+  cmd-info: "Eklenti bilgisi"
+  # Bilgi paneli
+  info-title: "Eklenti Bilgisi"
+  info-version: "Sürüm"
+  info-author: "Yazar"
+  info-api: "API"
+  # Yeniden yükleme
+  reload-done: "Eklenti başarıyla <bold>yeniden yüklendi</bold><green>."
+gui:
+  # Staff Menu
+  staff-menu-title: "<dark_gray>» <gradient:#ff6b6b:#ffd93d>Staff Menüsü</gradient> <dark_gray>«"
+  staff-menu-warn: "<gradient:#FFD700:#FF8C00><bold>⚠ Uyar</bold></gradient>"
+  staff-menu-warn-lore1: "<gray>Oyuncuya yazılı uyarı gönder."
+  staff-menu-warn-lore2: "<gray>Uyarılar kayıt altına alınır."
+  staff-menu-mute: "<yellow><bold>⊘ Sustur</bold></yellow>"
+  staff-menu-mute-lore1: "<gray>Oyuncunun sohbet yazmasını engelle."
+  staff-menu-mute-lore2: "<yellow>▶ Süre seçmek için tıkla"
+  staff-menu-ban: "<red><bold>✖ Yasakla</bold></red>"
+  staff-menu-ban-lore1: "<gray>Oyuncuyu sunucudan yasakla."
+  staff-menu-ban-lore2: "<red>▶ Süre seçmek için tıkla"
+  staff-menu-kick: "<gold><bold>⇥ At</bold></gold>"
+  staff-menu-kick-lore1: "<gray>Oyuncuyu sunucudan at."
+  staff-menu-kick-lore2: "<gold>▶ Tıkla"
+  staff-menu-freeze: "<aqua><bold>❄ Dondur</bold></aqua>"
+  staff-menu-freeze-lore1: "<gray>Oyuncunun hareketini dondur."
+  staff-menu-freeze-lore2: "<gray>Mesaj gönderemez, hareket edemez."
+  staff-menu-freeze-lore3: "<aqua>▶ Tıkla"
+  staff-menu-unfreeze: "<aqua><bold>❄ Çöz</bold></aqua>"
+  staff-menu-unfreeze-lore1: "<gray>Oyuncu şu an <aqua>dondurulmuş<gray>."
+  staff-menu-unfreeze-lore2: "<gray>Tekrar tıklayınca çözülür."
+  staff-menu-unfreeze-lore3: "<aqua>▶ Çözmek için tıkla"
+  staff-menu-msghistory: "<gradient:#00c6ff:#0072ff><bold>✉ Mesaj Geçmişi</bold></gradient>"
+  staff-menu-msghistory-lore1: "<gray>Oyuncunun son 20 mesajını gör."
+  staff-menu-msghistory-lore2: "<aqua>▶ Tıkla"
+  staff-menu-notes: "<gradient:#a855f7:#6366f1><bold>✎ Notlar</bold></gradient>"
+  staff-menu-notes-lore1: "<gray>Oyuncuya gizli not ekle/görüntüle."
+  staff-menu-notes-lore2: "<gray>Sadece staff görebilir."
+  staff-menu-notes-lore3: "<light_purple>▶ Tıkla"
+  staff-menu-history: "<gradient:#b39ddb:#7c4dff><bold>✦ Ceza Geçmişi</bold></gradient>"
+  staff-menu-history-lore1: "<gray>Oyuncunun tüm ceza geçmişini gör."
+  staff-menu-history-lore2: "<light_purple>▶ Tıkla"
+  staff-menu-inventory: "<aqua><bold>⊞ Envanter</bold></aqua>"
+  staff-menu-inventory-lore1: "<gray>Oyuncunun envanterini görüntüle."
+  staff-menu-inventory-lore2: "<aqua>▶ Tıkla"
+  staff-head-uuid: "<gray>UUID  : <white>"
+  staff-head-ping: "<gray>Ping  : <aqua>"
+  staff-head-world: "<gray>Dünya : <white>"
+  staff-head-warns: "<gray>Uyarı : "
+  staff-head-notes: "<gray>Notlar: <white>"
+  staff-head-status: "<gray>Durum : "
+  staff-head-frozen: "<aqua>❄ Dondurulmuş"
+  staff-head-normal: "<green>✓ Normal"
+  click: "<yellow>▶ Tıkla"
+  back: "<gray>← Geri"
+
+  # Warn GUI
+  warn-title: "<dark_gray>» <gradient:#FFD700:#FF8C00>Uyarı — {player}</gradient> <dark_gray>«"
+  warn-total: "<gray>Toplam Uyarı: "
+  warn-head-lore: "<gray>Bir sebep seçerek uyarı gönder"
+  warn-reason-lore1: "<gray>Bu sebeple oyuncuyu uyar"
+  warn-reason-lore2: "<yellow>▶ Tıkla"
+  warn-no-history: "<gray>Uyarı geçmişi yok"
+  warn-item-title: "<yellow>#{no} Uyarı"
+  warn-item-reason: "<gray>Sebep : <white>"
+  warn-item-staff: "<gray>Staff  : <white>"
+  warn-item-date: "<gray>Tarih  : <white>"
+  warn-clear-title: "<red><bold>Tüm Uyarıları Temizle"
+  warn-clear-lore1: "<gray>Toplam: <white>{count} uyarı"
+  warn-clear-lore2: "<red>▶ Tıkla"
+  warn-reasons: "Küfür,Spam,Reklam,Hakaret,Kural İhlali"
+
+  # Note GUI
+  note-title: "<dark_gray>» <gradient:#a855f7:#6366f1>Notlar — {player}</gradient> <dark_gray>«"
+  note-no-notes: "<gray>Henüz not yok"
+  note-item-title: "<gradient:#a855f7:#6366f1>Not #{no}"
+  note-item-by: "<gray>Yazan : <white>"
+  note-item-date: "<gray>Tarih  : <white>"
+  note-item-delete: "<red>⇧ Shift+Tıkla → Sil"
+  note-add-title: "<gradient:#a855f7:#6366f1><bold>+ Not Ekle</bold></gradient>"
+  note-add-lore1: "<gray>Oyuncuya gizli not ekle"
+  note-add-lore2: "<gray>Sohbete /note <metin> yaz"
+  note-add-lore3: "<light_purple>▶ Tıkla → sohbete yaz"
+
+  # Message History GUI
+  msghistory-title: "<dark_gray>» <gradient:#00c6ff:#0072ff>Mesaj Geçmişi — {player}</gradient> <dark_gray>«"
+  msghistory-empty-title: "<gray>Mesaj geçmişi bulunamadı"
+  msghistory-empty-lore: "<dark_gray>Bu oturumda mesaj gönderilmemiş."
+  msghistory-time: "<gray>Saat: <white>"
+
+  # History GUI (punishments)
+  history-no-records: "<gray>Ceza geçmişi yok"
+  history-prev: "<gray>← Önceki"
+  history-next: "<gray>Sonraki →"
+  history-instant: "Anlık"
+  history-active: "<green>Aktif"
+  history-inactive: "<dark_gray>Pasif"
+  history-reason: "<gray>Sebep: <white>"
+  history-staff: "<gray>Staff: <white>"
+  history-date: "<gray>Tarih: <white>"
+  history-duration: "<gray>Süre: <white>"
+  history-status: "<gray>Durum: "
+
+moderation:
+  freeze-target: "<aqua>❄ Donduruldunuz! Hareket edemezsiniz."
+  freeze-staff: "<green>{player} donduruldu."
+  unfreeze-target: "<green>✓ Çözüldünüz! Tekrar hareket edebilirsiniz."
+  unfreeze-staff: "<green>{player} çözüldü."
+  warn-cleared: "<green>{player} uyarıları temizlendi."
+  warn-sent-target: "<yellow>⚠ <white>{staff} <yellow>sizi uyardı. <gray>Sebep: <white>{reason}"
+  warn-sent-staff: "<green>{player} uyarıldı. <gray>Sebep: <white>{reason}"
+  warn-total: "<gray>Toplam uyarı: <white>{count}"
+  note-deleted: "<green>Not silindi."
+  note-cancelled: "<gray>Not ekleme iptal edildi."
+  note-input-prompt: "<light_purple>Eklemek istediğiniz notu sohbete yazın. <gray>İptal: <white>/note iptal"
+  note-saved: "<green>Not kaydedildi."
+
+msg:
+  format-out: "<dark_gray>[<light_purple>PM</light_purple>]</dark_gray> <gray>Sen → <white>{target}</white>: <light_purple>{message}"
+  format-in:  "<dark_gray>[<light_purple>PM</light_purple>]</dark_gray> <gray><white>{sender}</white> → Sen: <light_purple>{message}"
+  format-spy: "<dark_gray>[<yellow>SPY-PM</yellow>]</dark_gray> <gray>{sender} → {target}: <white>{message}"
+  no-reply-target: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Yanıtlanacak mesaj yok."
+  target-offline: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Bu oyuncu çevrimiçi değil."
+  self-message: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Kendinize mesaj gönderemezsiniz."
+
+stafflist:
+  header: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Çevrimiçi Yetkililer:"
+  entry:  "  <dark_gray>▸</dark_gray> <aqua>{staff}</aqua>"
+  footer: "<dark_gray>────────────────</dark_gray> <gray>Toplam: <white>{count}</white>"
+  none:   "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <gray>Şu anda çevrimiçi yetkili yok."
+
+report:
+  sent:         "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <green><white>{target}</white> hakkındaki şikayetiniz iletildi."
+  staff-notify: "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>[ŞİKAYET]</red> <white>{reporter}</white>, <yellow>{target}</yellow> hakkında şikayette bulundu: <gray>{reason}"
+  cooldown:     "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Tekrar şikayet etmek için {seconds} saniye bekleyin."
+  self:         "<gradient:#FF8C00:#FFD700><bold>AChat</bold></gradient> <dark_gray>»</dark_gray> <red>Kendinizi şikayet edemezsiniz."

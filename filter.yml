@@ -1,0 +1,197 @@
+# AdvancedChat - Chat Filter Configuration
+#
+# HOW IT WORKS:
+#   Messages are normalized before checking:
+#   - Leet speak:  f4ck → fuck,  s1k → sik,  s0k → sok
+#   - Spaced out:  f u c k → fuck
+#   - Repeated:    fuuuck → fuck
+#   - Unicode:     ƒùck → fuck
+#   - Turkish:     şık → sik,  sık → sik (dotless i)
+#
+# ACTIONS:
+#   BLOCK     - Cancel the message entirely
+#   REPLACE   - Replace with the replacement string
+#   WARN      - Send warning, still deliver message
+#   WARN_MUTE - Send warning + auto mute for mute-duration
+#
+# PATTERNS:
+#   Plain word  → "fuck"        matches anywhere in message
+#   Wildcard    → "*fuck*"      matches fuck with anything around it
+#   Regex       → "regex:f+u+c+k+" advanced pattern
+#
+# WHITELIST:
+#   Words here bypass the filter entirely (normalized comparison).
+#   Example: "scunthorpe" contains "cunt" but is a real city name.
+
+enabled: true
+log-violations: true
+
+whitelist:
+  - "scunthorpe"
+  - "assassin"
+  - "classic"
+  - "cockatoo"
+  - "analiz"       # Turkish: "analysis"
+  - "dokunma"      # Turkish: "don't touch"
+
+words:
+  # ── English ─────────────────────────────────────────────────────────────────
+  fuck:
+    pattern: "fuck"
+    action: BLOCK
+
+  shit:
+    pattern: "shit"
+    action: BLOCK
+
+  bitch:
+    pattern: "bitch"
+    action: BLOCK
+
+  ass:
+    pattern: "ass"
+    action: REPLACE
+    replacement: "***"
+
+  cunt:
+    pattern: "cunt"
+    action: BLOCK
+
+  bastard:
+    pattern: "bastard"
+    action: BLOCK
+
+  dick:
+    pattern: "dick"
+    action: BLOCK
+
+  pussy:
+    pattern: "pussy"
+    action: BLOCK
+
+  nigger:
+    pattern: "nigger"
+    action: BLOCK
+
+  nigga:
+    pattern: "nigga"
+    action: BLOCK
+
+  whore:
+    pattern: "whore"
+    action: BLOCK
+
+  slut:
+    pattern: "slut"
+    action: BLOCK
+
+  faggot:
+    pattern: "faggot"
+    action: BLOCK
+
+  retard:
+    pattern: "retard"
+    action: WARN_MUTE
+    mute-duration: "5m"
+
+  # ── Turkish ─────────────────────────────────────────────────────────────────
+  sik:
+    pattern: "sik"
+    action: BLOCK
+
+  sok:
+    pattern: "sok"
+    action: BLOCK
+
+  orospu:
+    pattern: "orospu"
+    action: BLOCK
+
+  orospu_cocugu:
+    pattern: "orospucocugu"
+    action: BLOCK
+
+  pic:
+    pattern: "pic"
+    action: BLOCK
+
+  amk:
+    pattern: "amk"
+    action: BLOCK
+
+  bok:
+    pattern: "bok"
+    action: REPLACE
+    replacement: "***"
+
+  göt:
+    pattern: "got"
+    action: BLOCK
+
+  yarrak:
+    pattern: "yarrak"
+    action: BLOCK
+
+  sikerim:
+    pattern: "sikerim"
+    action: BLOCK
+
+  ananı:
+    pattern: "anani"
+    action: BLOCK
+
+  anan:
+    pattern: "anan"
+    action: BLOCK
+
+  ibne:
+    pattern: "ibne"
+    action: BLOCK
+
+  gerizekalı:
+    pattern: "gerizekali"
+    action: WARN_MUTE
+    mute-duration: "5m"
+
+  salak:
+    pattern: "salak"
+    action: WARN
+
+  aptal:
+    pattern: "aptal"
+    action: WARN
+
+  mal:
+    pattern: "mal"
+    action: WARN
+
+  puşt:
+    pattern: "pust"
+    action: BLOCK
+
+  kahpe:
+    pattern: "kahpe"
+    action: BLOCK
+
+  sürtük:
+    pattern: "surtuk"
+    action: BLOCK
+
+  # ── Racism / Hate ────────────────────────────────────────────────────────────
+  hitler:
+    pattern: "hitler"
+    action: WARN_MUTE
+    mute-duration: "10m"
+
+  nazi:
+    pattern: "nazi"
+    action: WARN
+
+  # ── Spam patterns (regex) ─────────────────────────────────────────────────
+  ip_advertise:
+    pattern: "regex:\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
+    action: BLOCK
+
+  discord_invite:
+    pattern: "regex:discord\\.gg/[a-zA-Z0-9]+"
+    action: BLOCK
